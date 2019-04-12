@@ -13,41 +13,46 @@ import android.widget.Toast;
 public class Activity2 extends AppCompatActivity {
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_2);
 
         final ImageView iv = findViewById(R.id.imageView);
 
-        iv.setOnClickListener(new View.OnClickListener (){
+        iv.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view){
+            public void onClick(View view) {
                 androidClick();
             }
         });
     }
 
     private void androidClick(){
-        final AlertDialog.Builder alert = new AlertDialog.Builder(context.this);
+        final AlertDialog.Builder alert = new AlertDialog.Builder( this);
         final EditText input = new EditText(this);
         alert.setView(input);
         alert.setPositiveButton("Change text", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int whichButton) {
-                dialog.cancel();
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String value = input.getText().toString().trim();
+                changeText(value);
             }
         });
+        alert.setNegativeButton("Cancel",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
         alert.show();
     }
 
-    private void changeText(String value){
-        // change text in textView1 to value and send a toast to let the user know that it changed
-        TextView tv = findViewById(R.id.textView);
+    private void changeText(String value) {
+        TextView tv = findViewById(R.id.textView2);
         tv.setText(value);
 
-        Toast.makeText(getApplicationContext(), "Text changed!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "changed", Toast.LENGTH_SHORT).show();
     }
 
 }
-
-
-

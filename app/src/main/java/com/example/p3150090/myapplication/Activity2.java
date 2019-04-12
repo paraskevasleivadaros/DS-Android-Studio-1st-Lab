@@ -49,7 +49,7 @@ public class Activity2 extends AppCompatActivity {
     }
 
     private void changeText(String value) {
-        TextView tv = findViewById(R.id.textView2);
+        TextView tv = findViewById(R.id.textview);
         tv.setText(value);
 
         Toast.makeText(getApplicationContext(), "changed", Toast.LENGTH_SHORT).show();

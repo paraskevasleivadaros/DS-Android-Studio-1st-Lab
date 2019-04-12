@@ -18,8 +18,8 @@ public class MainActivity extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent mySecondActivityIntent = new Intent(view.getContext(),
-                startActicyForResult(mySecondActivityIntent, requestCode));
+                Intent mySecondActivityIntent = new Intent(view.getContext(), MainActivity.class);
+                startActivityForResult(mySecondActivityIntent, 0);
             }
         });
     }

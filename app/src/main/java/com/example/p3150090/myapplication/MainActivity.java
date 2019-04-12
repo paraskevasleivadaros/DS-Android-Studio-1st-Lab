@@ -1,24 +1,25 @@
-package com.example.p3150090.myapplication;
+package lab.p3150137.androidlab;
 
+import android.app.Activity;
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
-    /** Called when the actiivty is first created */
+public class MainActivity extends Activity {
+
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button next = findViewById(R.id.button);
+        Button next = (Button) findViewById(R.id.button);
 
         next.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent mySecondActivityIntent = new Intent(view.getContext(), MainActivity.class);
+            public void onClick(View v) {
+                Intent mySecondActivityIntent = new Intent(v.getContext(), Main2Activity.class);
                 startActivityForResult(mySecondActivityIntent, 0);
             }
         });

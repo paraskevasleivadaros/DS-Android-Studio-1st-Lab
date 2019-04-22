@@ -1,4 +1,4 @@
-package lab.p3150137.androidlab;
+package lab.p3150090.androidlab;
 
 import android.app.Activity;
 import android.content.Intent;

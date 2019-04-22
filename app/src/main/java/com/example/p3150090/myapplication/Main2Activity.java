@@ -1,4 +1,4 @@
-package lab.p3150137.androidlab;
+package lab.p3150090.androidlab;
 
 import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;

@@ -1,14 +1,16 @@
 package lab.p3150090.androidlab;
 
 import android.content.DialogInterface;
+import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.p3150090.myapplication.R;
 
 public class Main2Activity extends AppCompatActivity {
 
@@ -17,7 +19,7 @@ public class Main2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        final ImageView iv = (ImageView) findViewById(R.id.imageView);
+        final ImageView iv = findViewById(R.id.imageView);
 
         iv.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,7 +50,7 @@ public class Main2Activity extends AppCompatActivity {
     }
 
     private void changeText(String value) {
-        TextView tv = (TextView) findViewById(R.id.textview);
+        TextView tv = findViewById(R.id.textview);
         tv.setText(value);
 
         Toast.makeText(getApplicationContext(), "Text changed", Toast.LENGTH_SHORT).show();
